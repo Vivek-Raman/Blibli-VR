@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 2788014793
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fee785fa9ca89e880381e0177305a408
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c3bc9454c9657fbc579b33c9a3035451
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/CatalogItem.asset
+- Assets/Prefabs/stall 1 Variant.prefab
+- Assets/Models/stall 1.obj
+Dependencies: []
