@@ -1,4 +1,4 @@
-using API;
+using Quinbay.API;
 using UnityEngine;
 
 public class LoadAssetFromBundle : MonoBehaviour

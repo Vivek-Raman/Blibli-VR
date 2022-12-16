@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon;
@@ -10,7 +9,7 @@ using Amazon.S3.Model;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace API
+namespace Quinbay.API
 {
     public class AWSClient : APIClient
     {
@@ -19,55 +18,56 @@ namespace API
 
         [SerializeField] private string s3BucketName = "blibli-catalog-codiecon";
 
-        [CanBeNull] private AmazonS3Client _s3Client = null;
+        [CanBeNull] private AmazonS3Client s3Client = null;
 
-        protected override APIClient Init()
+        protected override void Init()
         {
-            _s3Client =
-                new AmazonS3Client(
-                    new BasicAWSCredentials(AWS_ACCESS_KEY, AWS_SECRET_KEY),
-                    RegionEndpoint.APSouth1);
-
-            return this;
+            s3Client = new AmazonS3Client(
+                new BasicAWSCredentials(AWS_ACCESS_KEY, AWS_SECRET_KEY),
+                RegionEndpoint.APSouth1);
         }
 
         [Obsolete]
         public override List<string> ListS3Buckets()
         {
-            ListBucketsResponse response = _s3Client?.ListBucketsAsync(new ListBucketsRequest()).Result;
+            ListBucketsResponse response = s3Client?.ListBucketsAsync(new ListBucketsRequest()).Result;
             return response?.Buckets.ConvertAll(bucket => bucket.BucketName);
         }
 
         public override async Task DownloadAssetBundles()
         {
             List<string> keys = GetObjectKeysFromBucket(s3BucketName);
-            List<Task<GetObjectResponse>> tasks = new List<Task<GetObjectResponse>>();
+            List<Task<GetObjectResponse>> objectTasks = new();
 
             foreach (string key in keys)
             {
-                GetObjectRequest request = new GetObjectRequest
+                GetObjectRequest request = new()
                 {
                     BucketName = s3BucketName,
                     Key = key,
                 };
-                tasks.Add(_s3Client?.GetObjectAsync(request));
+                objectTasks.Add(s3Client?.GetObjectAsync(request));
             }
+            GetObjectResponse[] responses = await Task.WhenAll(objectTasks);
 
-            GetObjectResponse[] responses = Task.WhenAll(tasks).Result;
+            List<Task> downloadTasks = new();
             foreach (GetObjectResponse response in responses)
             {
-                await response.WriteResponseStreamToFileAsync(Application.streamingAssetsPath + "/" + response.Key,
-                    false, CancellationToken.None);
+                downloadTasks.Add(response.WriteResponseStreamToFileAsync(
+                    Application.streamingAssetsPath + "/" + response.Key,
+                    false, CancellationToken.None));
             }
+
+            await Task.WhenAll(downloadTasks);
         }
 
         private List<string> GetObjectKeysFromBucket(string bucketName)
         {
-            ListObjectsRequest request = new ListObjectsRequest
+            ListObjectsRequest request = new()
             {
-                BucketName = s3BucketName,
+                BucketName = bucketName,
             };
-            ListObjectsResponse response = _s3Client?.ListObjectsAsync(request).Result;
+            ListObjectsResponse response = s3Client?.ListObjectsAsync(request).Result;
 
             List<string> keys = response?.S3Objects.ConvertAll(obj => obj.Key);
             return keys;

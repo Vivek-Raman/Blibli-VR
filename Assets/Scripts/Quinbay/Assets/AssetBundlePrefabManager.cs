@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using API;
-using Data;
+using Quinbay.API;
+using Quinbay.Catalog.Data;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Assets
+namespace Quinbay.Assets
 {
     public class AssetBundlePrefabManager : MonoBehaviour
     {
@@ -49,6 +49,11 @@ namespace Assets
             AssetBundleRequest assetRequest = bundle.LoadAssetAsync<CatalogItem>("CatalogItem");
             yield return assetRequest;
             CatalogItem item = assetRequest.asset as CatalogItem;
+            if (item == null)
+            {
+                Debug.LogError("Cannot fetch CatalogItem from bundle at " + filePath);
+                yield break;
+            }
             _catalog.Add(item.ItemSku, item);
         }
 

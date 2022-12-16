@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace API
+namespace Quinbay.API
 {
     public abstract class APIClient : MonoBehaviour
     {
-        protected abstract APIClient Init();
+        protected abstract void Init();
         
         private void Awake()
         {
-            this.Init();
+            Init();
         }
 
         [Obsolete]

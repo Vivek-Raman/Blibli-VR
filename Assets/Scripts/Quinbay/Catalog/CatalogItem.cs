@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Data
+namespace Quinbay.Catalog.Data
 {
     [CreateAssetMenu]
     public class CatalogItem : ScriptableObject
