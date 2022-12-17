@@ -7,6 +7,7 @@ namespace Quinbay.Space
     {
         List<BlibliSpace> Spaces { get; }
 
-        void SelectSpace();
+        void SelectSpace(string spaceName);
+        void SelectSpace(BlibliSpace space);
     }
 }
