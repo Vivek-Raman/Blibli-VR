@@ -13,8 +13,12 @@ namespace Quinbay.API
 {
     public class AWSClient : APIClient
     {
+        #region Secrets
+
         private const string AWS_ACCESS_KEY = "nope";
         private const string AWS_SECRET_KEY = "nope";
+
+        #endregion
 
         [SerializeField] private string s3BucketName = "blibli-catalog-codiecon";
 
@@ -23,8 +27,7 @@ namespace Quinbay.API
         protected override void Init()
         {
             s3Client = new AmazonS3Client(
-                new BasicAWSCredentials(AWS_ACCESS_KEY, AWS_SECRET_KEY),
-                RegionEndpoint.APSouth1);
+                new BasicAWSCredentials(AWS_ACCESS_KEY, AWS_SECRET_KEY), RegionEndpoint.APSouth1);
         }
 
         [Obsolete]
