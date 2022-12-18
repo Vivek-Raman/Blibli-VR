@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
   m_Name: CatalogItem
   m_EditorClassIdentifier: 
-  itemSku: VIS-70001-00004-00001
+  itemSku: VIS-70001-00001-00001
   prefab: {fileID: 2619119933383503881, guid: 2db1c5b3eff639445aa07b2f95a954b9, type: 3}
+  interactionTriggerScale: 1

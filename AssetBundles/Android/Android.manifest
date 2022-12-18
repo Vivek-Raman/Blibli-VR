@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 2435747874
+CRC: 1928323058
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: test-bundle
+      Dependencies: {}
+    Info_1:
+      Name: game console
       Dependencies: {}

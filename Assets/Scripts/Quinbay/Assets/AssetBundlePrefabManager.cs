@@ -46,7 +46,7 @@ namespace Quinbay.Assets
             AssetBundleCreateRequest loader = AssetBundle.LoadFromFileAsync(filePath);
             yield return loader;
             AssetBundle bundle = loader.assetBundle;
-            AssetBundleRequest assetRequest = bundle.LoadAssetAsync<CatalogItem>("CatalogItem");
+            AssetBundleRequest assetRequest = bundle.LoadAssetAsync<CatalogItem>(CatalogItem.FileName);
             yield return assetRequest;
             CatalogItem item = assetRequest.asset as CatalogItem;
             if (item == null)
@@ -61,7 +61,7 @@ namespace Quinbay.Assets
 
         public GameObject InstantiateItemFromCatalog(string itemSku)
         {
-            return Instantiate(GetItemFromCatalog((itemSku))?.Prefab);
+            return Instantiate(GetItemFromCatalog(itemSku)?.Prefab);
         }
 
         [CanBeNull]

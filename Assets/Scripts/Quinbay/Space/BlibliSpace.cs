@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Quinbay.Data
+namespace Quinbay.Space
 {
     [CreateAssetMenu]
     public class BlibliSpace : ScriptableObject

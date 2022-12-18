@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3373003189704140039}
   - component: {fileID: 603633350293653587}
+  - component: {fileID: 3125043372386163077}
   m_Layer: 0
   m_Name: Catalog Item Prefab
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catalogItem: {fileID: 0}
+--- !u!65 &3125043372386163077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036232869261950941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3335519046494623541
 GameObject:
   m_ObjectHideFlags: 0
