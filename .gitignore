@@ -217,3 +217,5 @@ Assets/Oculus/**/*
 Assets/Oculus.meta
 Assets/StreamingAssets/**/*
 Assets/StreamingAssets.meta
+Assets/ThirdParty/**/*
+Assets/ThirdParty.meta
