@@ -30,7 +30,7 @@ namespace Quinbay.Assets
         private IEnumerator LoadAllDownloadedBundles()
         {
             List<Coroutine> coroutines = new List<Coroutine>();
-            foreach (string filePath in Directory.GetFiles(Application.streamingAssetsPath))
+            foreach (string filePath in Directory.GetFiles(Application.persistentDataPath))
             {
                 if (filePath.EndsWith(".meta")) continue;
                 coroutines.Add(StartCoroutine(LoadBundleFromFilePath(filePath)));
