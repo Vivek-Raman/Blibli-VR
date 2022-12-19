@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon;
@@ -57,7 +58,7 @@ namespace Quinbay.API
             foreach (GetObjectResponse response in responses)
             {
                 downloadTasks.Add(response.WriteResponseStreamToFileAsync(
-                    Application.streamingAssetsPath + "/" + response.Key,
+                    Application.persistentDataPath + "/" + response.Key,
                     false, CancellationToken.None));
             }
 
