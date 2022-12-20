@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Quinbay.API
 {
-    public class AWSClient : APIClient
+    public class AWSClient : MonoBehaviour
     {
         #region Secrets
 
@@ -25,20 +25,13 @@ namespace Quinbay.API
 
         [CanBeNull] private AmazonS3Client s3Client = null;
 
-        protected override void Init()
+        private void Awake()
         {
             s3Client = new AmazonS3Client(
                 new BasicAWSCredentials(AWS_ACCESS_KEY, AWS_SECRET_KEY), RegionEndpoint.APSouth1);
         }
 
-        [Obsolete]
-        public override List<string> ListS3Buckets()
-        {
-            ListBucketsResponse response = s3Client?.ListBucketsAsync(new ListBucketsRequest()).Result;
-            return response?.Buckets.ConvertAll(bucket => bucket.BucketName);
-        }
-
-        public override async Task DownloadAssetBundles()
+        public async Task DownloadAssetBundles()
         {
             List<string> keys = GetObjectKeysFromBucket(s3BucketName);
             List<Task<GetObjectResponse>> objectTasks = new();
