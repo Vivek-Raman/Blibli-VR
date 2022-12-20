@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4287305547591216581}
   - component: {fileID: 5361223324096298748}
   - component: {fileID: 7677738629900461111}
+  - component: {fileID: 2253618500982138986}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b665bc70e554596b950515d5646c3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiClient: {fileID: 4287305547591216581}
+  awsClient: {fileID: 4287305547591216581}
 --- !u!114 &7677738629900461111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,3 +74,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetBundlePrefabManager: {fileID: 5361223324096298748}
+  blibliClient: {fileID: 2253618500982138986}
+--- !u!114 &2253618500982138986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595234073191017512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1612561e1f8c454e8b68f7e88f19af64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testItem: {fileID: 11400000, guid: d214560e5f316b540ac054e016d55970, type: 2}

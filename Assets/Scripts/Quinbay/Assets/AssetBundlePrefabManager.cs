@@ -10,7 +10,7 @@ namespace Quinbay.Assets
 {
     public class AssetBundlePrefabManager : MonoBehaviour
     {
-        [SerializeField] private APIClient apiClient = null;
+        [SerializeField] private AWSClient awsClient = null;
 
         #region Download Item Catalog
 
@@ -18,7 +18,7 @@ namespace Quinbay.Assets
 
         private async void Start()
         {
-            await apiClient.DownloadAssetBundles();
+            await awsClient.DownloadAssetBundles();
             StartCoroutine(LoadAllDownloadedBundles());
         }
 

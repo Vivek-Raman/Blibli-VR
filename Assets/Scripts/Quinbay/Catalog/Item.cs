@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     public static UnityAction<Item> OnItemHovered;
 
     [SerializeField] protected CatalogItem catalogItem;
+    public CatalogItem CatalogItem => catalogItem;
 
     private void Awake()
     {
