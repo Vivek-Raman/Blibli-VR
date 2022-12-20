@@ -2,34 +2,17 @@ using System;
 using Oculus.Interaction;
 using Quinbay.Catalog.Data;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Item : MonoBehaviour, IPointable
+public class Item : MonoBehaviour
 {
-    [SerializeField] protected CatalogItem catalogItem;
+    public static UnityAction<Item> OnItemHovered;
 
-    private IGrabbable grabbable;
-    private IPointable pointable;
+    [SerializeField] protected CatalogItem catalogItem;
 
     private void Awake()
     {
         RecalculateTriggerBounds();
-        grabbable = this.GetComponent<IGrabbable>();
-        pointable = this.GetComponent<IPointable>();
-    }
-
-    private void OnEnable()
-    {
-        pointable.WhenPointerEventRaised += HandlePointerStateChanged;
-    }
-
-    private void OnDisable()
-    {
-        pointable.WhenPointerEventRaised -= HandlePointerStateChanged;
-    }
-
-    private void Update()
-    {
-        TryShowDetailsWhenFocussed();
     }
 
     public void RecalculateTriggerBounds()
@@ -62,24 +45,15 @@ public class Item : MonoBehaviour, IPointable
         myCollider.size = 2f * (catalogItem?.InteractionTriggerScale ?? 1f) * bounds.extents;
     }
     
-    // TODO: show item details when pointed at
-    private void TryShowDetailsWhenFocussed()
-    {
-    }
+    #region Show item details when hovered
 
-    private void HandlePointerStateChanged(PointerEvent pointerEvent)
+    public void HandleOnHover()
     {
-        if (pointerEvent.Type == PointerEventType.Hover)
-        {
-            Debug.Log("I'm being hovered");
-        }
-        else
-        {
-            Debug.Log("I'm not being hovered");
-        }
+        OnItemHovered?.Invoke(this);
     }
     
-    // TODO: make item grabbable by pinch
+    #endregion
+    
+    // TODO: make item grabbable
     // TODO: add item to cart
-    public event Action<PointerEvent> WhenPointerEventRaised;
 }

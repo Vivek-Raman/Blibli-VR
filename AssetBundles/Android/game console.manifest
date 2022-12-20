@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1050174007
+CRC: 3462964244
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 319e60a4d8d49b37e0adf8fa008da08e
+    Hash: 5c16a3e62de22fa3ff84173f77fb5a75
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 20c87058901aa9777c56914b51f11e16
+    Hash: 0fbbf6bb523b1b9345a9535b465e3eb6
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -32,16 +32,30 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 34ff1d4a833aaa54e8c3442c0162310b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a2140d2b457bea84881488302059889b, type: 3}
 - Class: 115
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.Grab.PoseMeasureParameters
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.GrabAPI.GrabbingRule
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
 Assets:
 - Assets/Prefabs/Catalog/Game Console/Item Prefab.prefab
 - Assets/Data/Catalog/Game Console/CatalogItem_DoNotRename.asset
