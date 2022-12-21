@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 5361223324096298748}
   - component: {fileID: 7677738629900461111}
   - component: {fileID: 2253618500982138986}
+  - component: {fileID: 6661345489815973291}
+  - component: {fileID: 2960613759782361666}
+  - component: {fileID: 47866255946918233}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -73,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165370116b46d451b93b3ec1ce4916b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetBundlePrefabManager: {fileID: 5361223324096298748}
   blibliClient: {fileID: 2253618500982138986}
+  productDetailsUIController: {fileID: 0}
 --- !u!114 &2253618500982138986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,4 +90,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1612561e1f8c454e8b68f7e88f19af64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testItem: {fileID: 11400000, guid: d214560e5f316b540ac054e016d55970, type: 2}
+--- !u!114 &6661345489815973291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595234073191017512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c463ad7740e79485bb35f292417ec5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  moveSpeed: 45
+--- !u!114 &2960613759782361666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595234073191017512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &47866255946918233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595234073191017512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1a9a1d119a5944aacfb87d1ec283a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  rayTransform: {fileID: 0}
+  m_Cursor: {fileID: 0}
+  joyPadClickButton: 1
+  gazeClickKey: 32
+  performSphereCastForGazepointer: 0
+  useRightStickScroll: 1
+  rightStickDeadZone: 0.15
+  useSwipeScroll: 1
+  swipeDragThreshold: 2
+  swipeDragScale: 1
+  InvertSwipeXAxis: 0
+  angleDragThreshold: 1
+  m_SpherecastRadius: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_AllowActivationOnMobileDevice: 1

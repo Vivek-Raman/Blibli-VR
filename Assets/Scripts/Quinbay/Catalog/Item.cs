@@ -50,11 +50,11 @@ public class Item : MonoBehaviour
 
     public void HandleOnHover()
     {
+        Debug.Log("#hover one");
         OnItemHovered?.Invoke(this);
     }
-    
+
     #endregion
-    
-    // TODO: make item grabbable
+
     // TODO: add item to cart
 }

@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandGrabInteractor Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
+      propertyPath: _hoverOnZeroStrength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8646129326984794350, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
       propertyPath: _hand
       value: 

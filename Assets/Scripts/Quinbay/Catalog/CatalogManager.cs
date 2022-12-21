@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Quinbay.API;
 using Quinbay.API.Response;
-using Quinbay.Assets;
-using Quinbay.Catalog.Data;
 using Quinbay.UI;
 using UnityEngine;
 
@@ -13,12 +9,10 @@ namespace Quinbay.Catalog
 {
     public class CatalogManager : MonoBehaviour
     {
-        [SerializeField] private AssetBundlePrefabManager assetBundlePrefabManager;
         [SerializeField] private BlibliClient blibliClient;
         [SerializeField] private ProductDetailsUIController productDetailsUIController;
 
         [CanBeNull] private Item lastHoveredItem = null;
-        [CanBeNull] private Task currentTask = null;
         [CanBeNull] private string currentItemSku = null;
 
         private void OnEnable()
@@ -38,34 +32,30 @@ namespace Quinbay.Catalog
                 return;
             }
 
-            currentTask?.Dispose();
-            currentTask = FetchProductDetailsForItem(hoveredItem);
-            currentTask.Start();
+            FetchProductDetailsForItem(hoveredItem);
         }
 
         private async Task FetchProductDetailsForItem(Item hoveredItem)
         {
             lastHoveredItem = hoveredItem;
+            currentItemSku = hoveredItem.CatalogItem.ItemSku;
 
-            // begin fetch product details in parallel
-            Task<ProductSummaryResponse> task = blibliClient.FetchProductDetailsForItemSku(hoveredItem.CatalogItem);
-            task.Start();
-
-            // TODO: hide canvas
+            // hide canvas
             productDetailsUIController.HideProductDetails();
             productDetailsUIController.ResetProductDetails();
 
-            // TODO: reposition canvas
-            productDetailsUIController.SetItemOrigin(hoveredItem.transform.position);
+            // reposition canvas
+            Transform hoveredItemTransform = hoveredItem.transform;
+            Vector3 offset = (hoveredItem.GetComponent<BoxCollider>().bounds.extents.z + 0.2f)
+                             * hoveredItem.CatalogItem.InteractionTriggerScale * hoveredItemTransform.up;
+            productDetailsUIController.SetFollowTargetAndOffset(hoveredItemTransform, offset);
 
-            // TODO: populate UI with product details once ready
-            ProductSummaryResponse response = await task;
+            // populate UI with product details
+            ProductSummaryResponse response = await blibliClient.FetchProductDetailsForItemSku(hoveredItem.CatalogItem);
             productDetailsUIController.SetProductDetails(response);
 
-            // TODO: show canvas
+            // show canvas
             productDetailsUIController.ShowProductDetails();
-
-            currentTask = null;
         }
     }
 }

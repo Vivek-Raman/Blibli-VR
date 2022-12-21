@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovementGestureInteractor
       objectReference: {fileID: 0}
+    - target: {fileID: 8881539145286469385, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
 --- !u!1001 &4027169132753297924
@@ -150,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 3136927766005197815}
     - target: {fileID: 4392756070075192809, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
       propertyPath: _interactors.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4392756070075192809, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
       propertyPath: _interactors.Array.data[0]
@@ -420,6 +424,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetForceMoveForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetForceMoveForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Quinbay.Player.GestureSupportedOVRPlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Quinbay.Player.GestureSupportedOVRPlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194229793563847779, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
+      propertyPath: _whenUnselected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3452989915556390802, guid: 7a9a713575dd5441ab4eee02b0ed9628, type: 3}
       propertyPath: _hand
       value: 
@@ -484,6 +548,10 @@ PrefabInstance:
     - target: {fileID: 2628813615979607116, guid: 01b89358a9f15415794f2f6123338743, type: 3}
       propertyPath: m_Name
       value: HandGrabInteractor Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628813615979607116, guid: 01b89358a9f15415794f2f6123338743, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9082151759321446943, guid: 01b89358a9f15415794f2f6123338743, type: 3}
       propertyPath: _hand
