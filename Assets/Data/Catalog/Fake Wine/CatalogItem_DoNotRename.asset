@@ -10,8 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
-  m_Name: CatalogItem
+  m_Name: CatalogItem_DoNotRename
   m_EditorClassIdentifier: 
-  itemSku: VIS-70001-00001-00001
-  prefab: {fileID: 2619119933383503881, guid: 2db1c5b3eff639445aa07b2f95a954b9, type: 3}
+  itemSku: sku5
+  pickupPointCode: pp1
+  prefab: {fileID: 7384585694418205887, guid: 1a0f705ac8b704c3596e4478ccad8d19, type: 3}
   interactionTriggerScale: 1
+  productInfo:
+    data:
+      name: Fake Wine
+      uniqueSellingPoint: Don't get excited, it's literally just orange juice.
+      stock: 100
+      price:
+        offered: 4500

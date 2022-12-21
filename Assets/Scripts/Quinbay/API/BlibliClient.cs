@@ -29,12 +29,7 @@ namespace Quinbay.API
 
             using (UnityWebRequest www = UnityWebRequest.Get(uri))
             {
-                Debug.Log("step 2.2, " + www.uri);
-                yield return www.Send();
-
-                Debug.Log("step 2.3, " + www.downloadHandler.isDone);
-                Debug.Log("step 2.3.1, " + www.downloadHandler.text);
-                Debug.Log("step 2.3.2, " + www.downloadHandler.error);
+                yield return www.SendWebRequest();
                 ProductSummaryResponse response = JsonUtility.FromJson<ProductSummaryResponse>(www.downloadHandler.text);
                 onSuccess?.Invoke(response);
             }

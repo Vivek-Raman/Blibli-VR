@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1327958136
+CRC: 618570067
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0b354074623b4631f092e861c6b416af
+    Hash: da108df4692b2252c369f079c8478a48
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 642b41e460c899d10798bba41a2c1409
+    Hash: 51210acaaeac2be75b00f7fdd198b8f0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -46,6 +46,12 @@ ClassTypes:
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data/Price
 - AssemblyName: Oculus.Interaction
   ClassName: Oculus.Interaction.Grab.PoseMeasureParameters
 - AssemblyName: Oculus.Interaction

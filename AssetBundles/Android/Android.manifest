@@ -1,7 +1,28 @@
 ManifestFileVersion: 0
-CRC: 2262533893
+CRC: 375691365
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: game console
+      Dependencies: {}
+    Info_1:
+      Name: fake wine
+      Dependencies: {}
+    Info_2:
+      Name: artwork of a lady
+      Dependencies: {}
+    Info_3:
+      Name: generic coffee maker
+      Dependencies: {}
+    Info_4:
+      Name: an antique toaster that's better than yours
+      Dependencies: {}
+    Info_5:
+      Name: computer kit monitor
+      Dependencies: {}
+    Info_6:
+      Name: computer kit mouse
+      Dependencies: {}
+    Info_7:
+      Name: computer kit keyboard
       Dependencies: {}

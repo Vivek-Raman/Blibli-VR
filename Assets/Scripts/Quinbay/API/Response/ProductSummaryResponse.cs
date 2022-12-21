@@ -11,8 +11,7 @@ namespace Quinbay.API.Response
         public class Data
         {
             public string name;
-            public string itemSku;
-            public string pickupPointCode;
+            public string uniqueSellingPoint;
             public long stock;
             public ProductSummaryResponse.Data.Price price;
 

@@ -8,18 +8,23 @@ public class Item : MonoBehaviour
 {
     public static UnityAction<Item> OnItemHovered;
 
+    [SerializeField] private bool allowDynamicRecalculate = true;
+    
     [SerializeField] protected CatalogItem catalogItem;
     public CatalogItem CatalogItem => catalogItem;
 
     private void Awake()
     {
-        RecalculateTriggerBounds();
+        if (allowDynamicRecalculate)
+        {
+            RecalculateTriggerBounds();
+        }
     }
 
     public void RecalculateTriggerBounds()
     {
         // https://forum.unity.com/threads/getting-the-bounds-of-the-group-of-objects.70979/#post-6440477
-        Bounds bounds = new Bounds(Vector3.zero, Vector3.zero);
+        Bounds bounds = new Bounds();
         Transform referenceTransform = this.transform.GetChild(0);
         RecurseEncapsulate(referenceTransform, ref bounds);
 

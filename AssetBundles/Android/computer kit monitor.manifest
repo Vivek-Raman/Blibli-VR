@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 4223165507
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b52abd5004f70c9682ef6264ad6147d2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cb3f41c65ffedc2a1bb36663b16afbc1
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data/Price
+Assets:
+- Assets/Data/Catalog/Computer Kit Monitor/CatalogItem_DoNotRename.asset
+Dependencies: []

@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Quinbay.API;
-using Quinbay.API.Response;
 using Quinbay.UI;
 using UnityEngine;
 
@@ -40,7 +38,6 @@ namespace Quinbay.Catalog
 
         private IEnumerator FetchProductDetailsForItem()
         {
-
             // hide canvas
             productDetailsUIController.HideProductDetails();
             productDetailsUIController.ResetProductDetails();
@@ -51,17 +48,15 @@ namespace Quinbay.Catalog
                              * lastHoveredItem.CatalogItem.InteractionTriggerScale * hoveredItemTransform.up;
             productDetailsUIController.SetFollowTargetAndOffset(hoveredItemTransform, offset);
 
-            yield return blibliClient.FetchProductDetailsForItemSku(lastHoveredItem.CatalogItem, response =>
-            {
-                Debug.Log("step 3, " + response.data.price.offered);
-
+            // yield return blibliClient.FetchProductDetailsForItemSku(lastHoveredItem.CatalogItem, response =>
+            // {
                 // populate UI with product details
-                productDetailsUIController.SetProductDetails(response);
+                productDetailsUIController.SetProductDetails(lastHoveredItem.CatalogItem.ProductInfo);
 
                 // show canvas
                 productDetailsUIController.ShowProductDetails();
-                Debug.Log("step 4");
-            });
+            // });
+            yield break;
         }
 
         #region Debug

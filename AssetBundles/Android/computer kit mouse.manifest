@@ -1,0 +1,70 @@
+ManifestFileVersion: 0
+CRC: 2613462071
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d71363e1e5b1612177c58b4b222d4f7a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 51210acaaeac2be75b00f7fdd198b8f0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 34ff1d4a833aaa54e8c3442c0162310b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a2140d2b457bea84881488302059889b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data
+- AssemblyName: Assembly-CSharp
+  ClassName: Quinbay.API.Response.ProductSummaryResponse/Data/Price
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.Grab.PoseMeasureParameters
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.GrabAPI.GrabbingRule
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+Assets:
+- Assets/Data/Catalog/Computer Kit Mouse/CatalogItem_DoNotRename.asset
+- Assets/Prefabs/Catalog/Computer Kit Mouse/Item Prefab.prefab
+Dependencies: []
