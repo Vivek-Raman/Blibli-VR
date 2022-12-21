@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Quinbay.API;
@@ -32,30 +33,49 @@ namespace Quinbay.Catalog
                 return;
             }
 
-            FetchProductDetailsForItem(hoveredItem);
-        }
-
-        private async Task FetchProductDetailsForItem(Item hoveredItem)
-        {
             lastHoveredItem = hoveredItem;
             currentItemSku = hoveredItem.CatalogItem.ItemSku;
+            StartCoroutine(nameof(FetchProductDetailsForItem));
+        }
+
+        private IEnumerator FetchProductDetailsForItem()
+        {
 
             // hide canvas
             productDetailsUIController.HideProductDetails();
             productDetailsUIController.ResetProductDetails();
 
             // reposition canvas
-            Transform hoveredItemTransform = hoveredItem.transform;
-            Vector3 offset = (hoveredItem.GetComponent<BoxCollider>().bounds.extents.z + 0.2f)
-                             * hoveredItem.CatalogItem.InteractionTriggerScale * hoveredItemTransform.up;
+            Transform hoveredItemTransform = lastHoveredItem.transform;
+            Vector3 offset = (lastHoveredItem.GetComponent<BoxCollider>().bounds.extents.z + 0.2f)
+                             * lastHoveredItem.CatalogItem.InteractionTriggerScale * hoveredItemTransform.up;
             productDetailsUIController.SetFollowTargetAndOffset(hoveredItemTransform, offset);
 
-            // populate UI with product details
-            ProductSummaryResponse response = await blibliClient.FetchProductDetailsForItemSku(hoveredItem.CatalogItem);
-            productDetailsUIController.SetProductDetails(response);
+            yield return blibliClient.FetchProductDetailsForItemSku(lastHoveredItem.CatalogItem, response =>
+            {
+                Debug.Log("step 3, " + response.data.price.offered);
 
-            // show canvas
-            productDetailsUIController.ShowProductDetails();
+                // populate UI with product details
+                productDetailsUIController.SetProductDetails(response);
+
+                // show canvas
+                productDetailsUIController.ShowProductDetails();
+                Debug.Log("step 4");
+            });
         }
+
+        #region Debug
+
+        [SerializeField] private Item debugItem;
+
+        [ContextMenu(nameof(Debug_ForceHoverOn))]
+        private void Debug_ForceHoverOn()
+        {
+            lastHoveredItem = debugItem;
+            currentItemSku = debugItem.CatalogItem.ItemSku;
+            StartCoroutine(nameof(FetchProductDetailsForItem));
+        }
+
+        #endregion
     }
 }

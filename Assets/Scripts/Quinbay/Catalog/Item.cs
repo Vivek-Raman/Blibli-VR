@@ -50,7 +50,6 @@ public class Item : MonoBehaviour
 
     public void HandleOnHover()
     {
-        Debug.Log("#hover one");
         OnItemHovered?.Invoke(this);
     }
 

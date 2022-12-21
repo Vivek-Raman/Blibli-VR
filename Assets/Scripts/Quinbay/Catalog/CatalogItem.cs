@@ -16,12 +16,6 @@ namespace Quinbay.Catalog.Data
         public GameObject Prefab => prefab;
         public float InteractionTriggerScale => interactionTriggerScale;
 
-        // #region Loaded from API
-        //
-        // public ProductSummaryResponse ProductSummary { get; set; }
-        //
-        // #endregion
-
         public const string FileName = "CatalogItem_DoNotRename";
     }
 }

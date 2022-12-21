@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360b68bc57d4ae4b6cb82919a40de5c, type: 3}
   m_Name: CatalogItem_DoNotRename
   m_EditorClassIdentifier: 
-  itemSku: VIS-70001-00004-00001
-  pickupPointCode: PP-3093624
+  itemSku: HOL-70052-15412-00001
+  pickupPointCode: PP-3423665
   prefab: {fileID: 7616944888724877935, guid: 56786507c0f2d934e80217d490a2c3a3, type: 3}
   interactionTriggerScale: 1.2
