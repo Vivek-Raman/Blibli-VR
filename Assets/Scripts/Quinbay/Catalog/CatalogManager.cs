@@ -44,7 +44,7 @@ namespace Quinbay.Catalog
 
             // reposition canvas
             Transform hoveredItemTransform = lastHoveredItem.transform;
-            Vector3 offset = (lastHoveredItem.GetComponent<BoxCollider>().bounds.extents.z + 0.2f)
+            Vector3 offset = (lastHoveredItem.GetComponent<BoxCollider>().bounds.extents.y + 0.2f)
                              * lastHoveredItem.CatalogItem.InteractionTriggerScale * hoveredItemTransform.up;
             productDetailsUIController.SetFollowTargetAndOffset(hoveredItemTransform, offset);
 

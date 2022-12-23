@@ -1,5 +1,3 @@
-using System;
-using Oculus.Interaction;
 using Quinbay.Catalog.Data;
 using UnityEngine;
 using UnityEngine.Events;

@@ -51,7 +51,7 @@ namespace Quinbay.UI
         public void SetProductDetails(ProductSummaryResponse productSummary)
         {
             titleText.text = productSummary.data.name ?? "";
-            descriptionText.text = productSummary.data.name ?? "";
+            descriptionText.text = productSummary.data.uniqueSellingPoint ?? "";
             priceText.text = "Price: Rp" + productSummary.data.price.offered.ToString() ?? "";
         }
         

@@ -27,7 +27,7 @@ namespace Quinbay.API
             };
             Uri uri = builder.Uri;
 
-            using (UnityWebRequest www = UnityWebRequest.Get(uri))
+            using (UnityWebRequest www = UnityWebRequest.Get(uri.ToString()))
             {
                 yield return www.SendWebRequest();
                 ProductSummaryResponse response = JsonUtility.FromJson<ProductSummaryResponse>(www.downloadHandler.text);
